@@ -42,9 +42,10 @@ export default function App() {
     );
   };
 
-  const visibleContact = () => contacts.filter(contact => {
-    return contact.name.toLowerCase().includes(filter.toLowerCase());
-  });
+  const visibleContact = () =>
+    contacts.filter(contact => {
+      return contact.name.toLowerCase().includes(filter.toLowerCase());
+    });
 
   return (
     <div>
