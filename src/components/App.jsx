@@ -8,9 +8,7 @@ export default function App() {
   const [contacts, setContacts] = useState(() => {
     return JSON.parse(window.localStorage.getItem('contacts')) ?? [];
   });
-  const [filter, setFilter] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('filter')) ?? '';
-  });
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -53,7 +51,10 @@ export default function App() {
       <ContactForm onSubmit={handleAddContact} />
       <h2>Contacts</h2>
       <Filter value={filter} inputFilterContact={filterContacts} />
-      <ContactList contacts={visibleContact()} onDeleteContact={deleteContact} />
+      <ContactList
+        contacts={visibleContact()}
+        onDeleteContact={deleteContact}
+      />
     </div>
   );
 }
