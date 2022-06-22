@@ -53,7 +53,7 @@ export default function App() {
       <ContactForm onSubmit={handleAddContact} />
       <h2>Contacts</h2>
       <Filter value={filter} inputFilterContact={filterContacts} />
-      <ContactList contacts={visibleContact} onDeleteContact={deleteContact} />
+      <ContactList contacts={visibleContact()} onDeleteContact={deleteContact} />
     </div>
   );
 }
